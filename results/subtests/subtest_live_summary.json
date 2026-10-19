@@ -1,0 +1,79 @@
+{
+  "split": "test_public",
+  "n_sample": 180,
+  "seed": 20261018,
+  "per_subtest": {
+    "doi_resolves": {
+      "comparable": 55,
+      "agreement": 0.6909,
+      "disagree": 17,
+      "live_abstained": 125,
+      "released_abstained": 100
+    },
+    "title_exists": {
+      "comparable": 180,
+      "agreement": 0.8444,
+      "disagree": 28,
+      "live_abstained": 0,
+      "released_abstained": 0
+    },
+    "authors_match": {
+      "comparable": 164,
+      "agreement": 0.6402,
+      "disagree": 59,
+      "live_abstained": 16,
+      "released_abstained": 0
+    },
+    "venue_correct": {
+      "comparable": 128,
+      "agreement": 0.2266,
+      "disagree": 99,
+      "live_abstained": 52,
+      "released_abstained": 0
+    },
+    "fields_complete": {
+      "comparable": 180,
+      "agreement": 0.9667,
+      "disagree": 6,
+      "live_abstained": 0,
+      "released_abstained": 0
+    },
+    "cross_db_agreement": {
+      "comparable": 160,
+      "agreement": 0.5687,
+      "disagree": 69,
+      "live_abstained": 20,
+      "released_abstained": 0
+    }
+  },
+  "source_availability": {
+    "crossref": {
+      "ok": 180
+    },
+    "openalex": {
+      "ok": 160,
+      "not_found": 20
+    },
+    "dblp": {
+      "not_found": 180
+    }
+  },
+  "n_sources_histogram": {
+    "2": 160,
+    "1": 20
+  },
+  "any_source_answered": 180,
+  "all_sources_answered": 0,
+  "live_detector": {
+    "tp": 113,
+    "fp": 65,
+    "tn": 1,
+    "fn": 1,
+    "abstain": 0,
+    "precision": 0.6348314606741573,
+    "recall": 0.9912280701754386,
+    "f1": 0.773972602739726,
+    "fpr": 0.9848484848484849,
+    "coverage": 1.0
+  }
+}

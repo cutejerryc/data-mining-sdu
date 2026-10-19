@@ -1,0 +1,42 @@
+16:06:55 ERROR   baseline hallucitechecker on test_public failed
+Traceback (most recent call last):
+  File "E:\Desktop\data mining\project\code\hallmark_repro\exp1_baselines.py", line 222, in main
+    res = run_one(name, split, args.workers, force=args.force, sample=args.sample)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Desktop\data mining\project\code\hallmark_repro\exp1_baselines.py", line 185, in run_one
+    return _run_subsample(name, name, split, sample, workers, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Desktop\data mining\project\code\hallmark_repro\exp1_baselines.py", line 139, in _run_subsample
+    out = score(entries, predictions, tag, f"{split}_{n}", eval_mode="conservative", extra=extra)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Desktop\data mining\project\code\hallmark_repro\common.py", line 194, in score
+    payload["_manifest"] = run_manifest(tag, split, entries, predictions, eval_mode)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Desktop\data mining\project\code\hallmark_repro\common.py", line 220, in run_manifest
+    "split_sha256": sha256_file(data_file(split)),
+                                ^^^^^^^^^^^^^^^^
+  File "E:\Desktop\data mining\project\code\hallmark_repro\common.py", line 92, in data_file
+    return REPO_ROOT / "data" / DATA_VERSION / SPLIT_PATHS[split]
+                                               ~~~~~~~~~~~^^^^^^^
+KeyError: 'test_public_300'
+16:36:46 ERROR   baseline checkifexist on test_public failed
+Traceback (most recent call last):
+  File "E:\Desktop\data mining\project\code\hallmark_repro\exp1_baselines.py", line 222, in main
+    res = run_one(name, split, args.workers, force=args.force, sample=args.sample)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Desktop\data mining\project\code\hallmark_repro\exp1_baselines.py", line 185, in run_one
+    return _run_subsample(name, name, split, sample, workers, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Desktop\data mining\project\code\hallmark_repro\exp1_baselines.py", line 139, in _run_subsample
+    out = score(entries, predictions, tag, f"{split}_{n}", eval_mode="conservative", extra=extra)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Desktop\data mining\project\code\hallmark_repro\common.py", line 194, in score
+    payload["_manifest"] = run_manifest(tag, split, entries, predictions, eval_mode)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Desktop\data mining\project\code\hallmark_repro\common.py", line 220, in run_manifest
+    "split": split,
+                    
+  File "E:\Desktop\data mining\project\code\hallmark_repro\common.py", line 92, in data_file
+    return REPO_ROOT / "data" / DATA_VERSION / SPLIT_PATHS[split]
+                                               ~~~~~~~~~~~^^^^^^^
+KeyError: 'test_public_300'

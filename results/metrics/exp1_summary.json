@@ -1,0 +1,15 @@
+{
+  "checkifexist__test_public_300": {
+    "tool": "checkifexist",
+    "split": "test_public",
+    "detection_rate": 1.0,
+    "fpr": 1.0,
+    "f1": 0.7720739219712526,
+    "tier_weighted_f1": 0.8742921857304643,
+    "coverage": 1.0,
+    "mean_api_calls": 3.0,
+    "ece": 0.5157390944832879,
+    "auroc": 0.35425052712286753,
+    "subsample_size": 300
+  }
+}

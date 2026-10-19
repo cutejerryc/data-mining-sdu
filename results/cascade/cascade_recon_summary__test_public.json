@@ -1,0 +1,31 @@
+{
+  "stage1": {
+    "detection_rate": 0.9847715736040609,
+    "false_positive_rate": 0.3090128755364807,
+    "f1_hallucination": 0.9086651053864168,
+    "tier_weighted_f1": 0.9442379182156133,
+    "mcc": 0.7387212030220397,
+    "auroc": 0.800919369948367,
+    "coverage": 0.7545126353790613
+  },
+  "cascade_conservative": {
+    "detection_rate": 0.953125,
+    "false_positive_rate": 0.26143790849673204,
+    "f1_hallucination": 0.9037037037037037,
+    "tier_weighted_f1": 0.9335863377609108,
+    "mcc": 0.726542781676219,
+    "auroc": 0.8320248672385623,
+    "coverage": 0.9843561973525873
+  },
+  "cascade_aggressive": {
+    "detection_rate": 0.9541984732824428,
+    "false_positive_rate": 0.26384364820846906,
+    "f1_hallucination": 0.904977375565611,
+    "tier_weighted_f1": 0.9349330872173511,
+    "mcc": 0.7265225946756834,
+    "auroc": 0.829493746425641,
+    "coverage": 1.0
+  },
+  "n_resolved_by_stage1": 627,
+  "n_deferred_to_stage2": 204
+}

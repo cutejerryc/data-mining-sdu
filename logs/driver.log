@@ -1,0 +1,7 @@
+[15:36:01] START exp1 :: -m hallmark_repro.exp1_baselines hallucitechecker checkifexist ensemble --splits test_public dev_public --workers 5
+[15:38:14] START exp1 :: -m hallmark_repro.exp1_baselines hallucitechecker checkifexist --splits test_public dev_public --workers 4
+[15:41:27] START exp2 :: -m hallmark_repro.exp2_cascade --stage1-only --split test_public
+[15:42:05] START exp3 :: -m hallmark_repro.exp3_subtests --live --n 180 --workers 6 --split test_public
+[15:54:28] OK exp3 in 743s
+[17:48:58] OK exp2 in 7651s
+[17:48:58] START exp2 :: -m hallmark_repro.exp2_cascade --stage1-only --split dev_public

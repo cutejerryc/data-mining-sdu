@@ -1,0 +1,1236 @@
+{
+  "split": "test_public",
+  "reference": "hallucitechecker",
+  "n_cases": 16,
+  "cases": [
+    {
+      "case_id": "FP-VALID-a337fdfa",
+      "outcome_vs_reference": "FP",
+      "bibtex_key": "a337fdfac36c",
+      "bibtex_type": "inproceedings",
+      "ground_truth_label": "VALID",
+      "hallucination_type": null,
+      "difficulty_tier": null,
+      "generation_method": "scraped",
+      "source": null,
+      "fields": {
+        "title": "Towards Rigorous Interpretations: a Formalisation of Feature Attribution",
+        "author": "Darius Afchar and Vincent Guigue and Romain Hennequin",
+        "year": "2021",
+        "booktitle": "ICML"
+      },
+      "gold_subtests": {
+        "doi_resolves": null,
+        "title_exists": true,
+        "authors_match": true,
+        "fields_complete": true,
+        "cross_db_agreement": true,
+        "venue_correct": true
+      },
+      "gold_explanation": "Valid entry scraped from DBLP and verified",
+      "baselines": {
+        "doi_presence_heuristic": {
+          "label": "HALLUCINATED",
+          "confidence": 0.8,
+          "reason": "No DOI field present (heuristic shortcut)",
+          "api_calls": 0,
+          "evaluated": true,
+          "subtest_results": {},
+          "api_sources_queried": []
+        },
+        "doi_only": {
+          "label": "VALID",
+          "confidence": 0.5,
+          "reason": "No DOI field present",
+          "api_calls": 0,
+          "evaluated": true,
+          "subtest_results": {},
+          "api_sources_queried": []
+        },
+        "hallucitechecker": {
+          "label": "HALLUCINATED",
+          "confidence": 0.6,
+          "reason": "No title match across ['crossref', 'arxiv'] (max similarity=0.661 < 0.90)",
+          "api_calls": 3,
+          "evaluated": true,
+          "subtest_results": {
+            "title_exists": false
+          },
+          "api_sources_queried": [
+            "crossref",
+            "arxiv"
+          ]
+        },
+        "bibtexupdater": {
+          "label": "HALLUCINATED",
+          "confidence": 0.638138,
+          "reason": "Status: title_mismatch; Mismatched: ['title', 'venue']; Unconfirmed (not compared): ['author']; Errors: ['DBLP: dblp dblp.org lookup did not complete: HTTP 202', 'OpenReview: openreview api2.openreview.net lookup did not complete: challenge-gated; no credentials configured; set OPENREVIEW_USERNAME / OPENREVIEW_PASSWORD', \"OpenAlex: openalex lookup did not complete: circuit open for service 'openalex'\", \"Semantic Scholar: semanticscholar lookup did not complete: circuit open for service 'semanticscholar'\"]",
+          "api_calls": 5,
+          "evaluated": true,
+          "subtest_results": {},
+          "api_sources_queried": [
+            "crossref",
+            "dblp",
+            "openreview",
+            "openalex",
+            "semanticscholar"
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "FN-near_miss_title-0cb3d100",
+      "outcome_vs_reference": "FN",
+      "bibtex_key": "0cb3d1006ca1",
+      "bibtex_type": "article",
+      "ground_truth_label": "HALLUCINATED",
+      "hallucination_type": "near_miss_title",
+      "difficulty_tier": 3,
+      "generation_method": "perturbation",
+      "source": null,
+      "fields": {
+        "title": "Neutral Prompts, Non-Neutral People: Quantifying Gender and Skin-Tone Bias in Gemini Flash 2.5 Image and GPT Visual 1.5",
+        "author": "Roberto Balestri",
+        "year": "2026",
+        "doi": "10.48550/arXiv.2602.12133v1"
+      },
+      "gold_subtests": {
+        "doi_resolves": true,
+        "title_exists": false,
+        "authors_match": true,
+        "venue_correct": true,
+        "fields_complete": true,
+        "cross_db_agreement": false
+      },
+      "gold_explanation": "Title slightly modified: 'Neutral Prompts, Non-Neutral People: Quantifying Gender and Skin-Tone Bias in Gemini Flash 2.5 Image and GPT Visual 1.5' (original: 'Neutral Prompts, Non-Neutral People: Quantifying Gender and Skin-Tone Bias in Gemini Flash 2.5 Image and GPT Image 1.5')",
+      "baselines": {
+        "doi_presence_heuristic": {
+          "label": "VALID",
+          "confidence": 0.6,
+          "reason": "DOI field present (heuristic shortcut)",
+          "api_calls": 0,
+          "evaluated": true,
+          "subtest_results": {},
+          "api_sources_queried": []
+        },
+        "doi_only": {
+          "label": "HALLUCINATED",
+          "confidence": 0.75,
+          "reason": "DOI returns HTTP 404 at doi.org",
+          "api_calls": 1,
+          "evaluated": true,
+          "subtest_results": {
+            "doi_resolves": false
+          },
+          "api_sources_queried": [
+            "doi.org"
+          ]
+        },
+        "hallucitechecker": {
+          "label": "VALID",
+          "confidence": 0.85,
+          "reason": "Title match in arxiv (similarity=0.963, threshold=0.90): 'Neutral Prompts, Non-Neutral People: Quantifying Gender and Skin-Tone Bias in Gemini Flash 2.5 Image and GPT Image 1.5'",
+          "api_calls": 2,
+          "evaluated": true,
+          "subtest_results": {
+            "title_exists": true
+          },
+          "api_sources_queried": [
+            "crossref",
+            "arxiv"
+          ]
+        },
+        "bibtexupdater": {
+          "label": "HALLUCINATED",
+          "confidence": 0.612112,
+          "reason": "Status: title_mismatch; Mismatched: ['title']; Errors: ['DBLP: dblp dblp.org lookup did not complete: HTTP 202', 'OpenReview: openreview api2.openreview.net lookup did not complete: challenge-gated; no credentials configured; set OPENREVIEW_USERNAME / OPENREVIEW_PASSWORD', 'Semantic Scholar: semanticscholar api.semanticscholar.org lookup did not complete: [WinError 10054] 远程主机强迫关闭了一个现有的连接。', \"OpenAlex: openalex lookup did not complete: circuit open for service 'openalex'\"]",
+          "api_calls": 6,
+          "evaluated": true,
+          "subtest_results": {},
+          "api_sources_queried": [
+            "crossref",
+            "dblp",
+            "openreview",
+            "semanticscholar",
+            "openalex",
+            "arxiv"
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "TP-hybrid_fabrication-a73d7564",
+      "outcome_vs_reference": "TP",
+      "bibtex_key": "a73d7564f5be",
+      "bibtex_type": "inproceedings",
+      "ground_truth_label": "HALLUCINATED",
+      "hallucination_type": "hybrid_fabrication",
+      "difficulty_tier": 2,
+      "generation_method": "adversarial",
+      "source": "perturbation_scaleup",
+      "fields": {
+        "title": "Forward Compatible Few-Shot Efficient training",
+        "author": "David Okonkwo and Laura Fischer and Wei-Ting Hsu",
+        "year": "2022",
+        "doi": "10.1109/CVPR52688.2022.00884",
+        "booktitle": "CVPR"
+      },
+      "gold_subtests": {
+        "doi_resolves": true,
+        "title_exists": false,
+        "authors_match": false,
+        "fields_complete": true,
+        "cross_db_agreement": false,
+        "venue_correct": true
+      },
+      "gold_explanation": "Real DOI with fabricated authors and modified title",
+      "baselines": {
+        "doi_presence_heuristic": {
+          "label": "VALID",
+          "confidence": 0.6,
+          "reason": "DOI field present (heuristic shortcut)",
+          "api_calls": 0,
+          "evaluated": true,
+          "subtest_results": {},
+          "api_sources_queried": []
+        },
+        "doi_only": {
+          "label": "VALID",
+          "confidence": 0.5,
+          "reason": "indeterminate | DOI returned HTTP 202 (indeterminate)",
+          "api_calls": 1,
+          "evaluated": true,
+          "subtest_results": {
+            "doi_resolves": null
+          },
+          "api_sources_queried": [
+            "doi.org"
+          ]
+        },
+        "hallucitechecker": {
+          "label": "HALLUCINATED",
+          "confidence": 0.6,
+          "reason": "No title match across ['crossref', 'arxiv'] (max similarity=0.764 < 0.90)",
+          "api_calls": 3,
+          "evaluated": true,
+          "subtest_results": {
+            "title_exists": false
+          },
+          "api_sources_queried": [
+            "crossref",
+            "arxiv"
+          ]
+        },
+        "bibtexupdater": {
+          "label": "HALLUCINATED",
+          "confidence": 0.5,
+          "reason": "Status: author_mismatch; Mismatched: ['title', 'author']; Errors: [\"DOI 10.1109/CVPR52688.2022.00884 resolves to the cited paper 'Forward Compatible Few-Shot Class-Incremental Learning', but the entry's authors do not match the record's authors (['zhou', 'wang', 'ye', 'ma', 'pu', 'zhan'])\"]",
+          "api_calls": 1,
+          "evaluated": true,
+          "subtest_results": {},
+          "api_sources_queried": [
+            "crossref"
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "FN-hybrid_fabrication-e8e1379d",
+      "outcome_vs_reference": "FN",
+      "bibtex_key": "e8e1379d3939",
+      "bibtex_type": "inproceedings",
+      "ground_truth_label": "HALLUCINATED",
+      "hallucination_type": "hybrid_fabrication",
+      "difficulty_tier": 2,
+      "generation_method": "llm_generated",
+      "source": "llm_generated",
+      "fields": {
+        "title": "Masked Autoencoders Are Scalable Vision Learners",
+        "author": "Kaiming He and Xinlei Chen and Saining Xie and Yanghao Li and Piotr Doll{\\'a}r and Ross Girshick",
+        "booktitle": "CVPR",
+        "year": "2022",
+        "doi": "10.1109/CVPR52688.2022.01552"
+      },
+      "gold_subtests": {
+        "doi_resolves": true,
+        "title_exists": false,
+        "authors_match": false,
+        "venue_correct": true,
+        "fields_complete": true,
+        "cross_db_agreement": false
+      },
+      "gold_explanation": "MAE (CVPR 2022); cited DOI 10.1109/CVPR52688.2022.01552 is 'Motion-from-Blur: 3D Shape and Motion Estimation of Motion-blurred Objects in Videos' (MAE is .01553).",
+      "baselines": {
+        "doi_presence_heuristic": {
+          "label": "VALID",
+          "confidence": 0.6,
+          "reason": "DOI field present (heuristic shortcut)",
+          "api_calls": 0,
+          "evaluated": true,
+          "subtest_results": {},
+          "api_sources_queried": []
+        },
+        "doi_only": {
+          "label": "VALID",
+          "confidence": 0.5,
+          "reason": "indeterminate | DOI returned HTTP 202 (indeterminate)",
+          "api_calls": 1,
+          "evaluated": true,
+          "subtest_results": {
+            "doi_resolves": null
+          },
+          "api_sources_queried": [
+            "doi.org"
+          ]
+        },
+        "hallucitechecker": {
+          "label": "VALID",
+          "confidence": 0.85,
+          "reason": "Title match in crossref (similarity=1.000, threshold=0.90): 'Masked Autoencoders Are Scalable Vision Learners'",
+          "api_calls": 1,
+          "evaluated": true,
+          "subtest_results": {
+            "title_exists": true
+          },
+          "api_sources_queried": [
+            "crossref"
+          ]
+        },
+        "bibtexupdater": {
+          "label": "HALLUCINATED",
+          "confidence": 0.5,
+          "reason": "Status: doi_mismatch; Errors: [\"DOI 10.1109/CVPR52688.2022.01552 resolves to 'Motion-from-Blur: 3D Shape and Motion Estimation of Motion-blurred Objects in Videos', which does not match entry title 'Masked Autoencoders Are Scalable Vision Learners'\"]",
+          "api_calls": 1,
+          "evaluated": true,
+          "subtest_results": {},
+          "api_sources_queried": [
+            "crossref"
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "TP-fabricated_doi-cea852a4",
+      "outcome_vs_reference": "TP",
+      "bibtex_key": "cea852a48efe",
+      "bibtex_type": "inproceedings",
+      "ground_truth_label": "HALLUCINATED",
+      "hallucination_type": "fabricated_doi",
+      "difficulty_tier": 1,
+      "generation_method": "perturbation",
+      "source": "perturbation_scaleup",
+      "fields": {
+        "title": "Spherical Message Passing for 3D Molecular Graphs",
+        "author": "Yi Liu and Limei Wang and Meng Liu and Yuchao Lin and Xuan Zhang and Bora Oztekin and Shuiwang Ji",
+        "year": "2022",
+        "booktitle": "ICLR",
+        "doi": "10.55910/mbwo.6329160"
+      },
+      "gold_subtests": {
+        "doi_resolves": false,
+        "title_exists": true,
+        "authors_match": true,
+        "fields_complete": true,
+        "cross_db_agreement": false,
+        "venue_correct": true
+      },
+      "gold_explanation": "DOI fabricated: 10.55910/mbwo.6329160 does not resolve",
+      "baselines": {
+        "doi_presence_heuristic": {
+          "label": "VALID",
+          "confidence": 0.6,
+          "reason": "DOI field present (heuristic shortcut)",
+          "api_calls": 0,
+          "evaluated": true,
+          "subtest_results": {},
+          "api_sources_queried": []
+        },
+        "doi_only": {
+          "label": "HALLUCINATED",
+          "confidence": 0.85,
+          "reason": "DOI returns HTTP 404 at doi.org | [Pre-screening confirms] DOI 10.55910/mbwo.6329160 returns 404 at doi.org",
+          "api_calls": 1,
+          "evaluated": true,
+          "subtest_results": {
+            "doi_resolves": false,
+            "check_doi_resolves": false
+          },
+          "api_sources_queried": [
+            "doi.org"
+          ]
+        },
+        "hallucitechecker": {
+          "label": "HALLUCINATED",
+          "confidence": 0.6,
+          "reason": "No title match across ['crossref', 'arxiv'] (max similarity=0.810 < 0.90)",
+          "api_calls": 3,
+          "evaluated": true,
+          "subtest_results": {
+            "title_exists": false
+          },
+          "api_sources_queried": [
+            "crossref",
+            "arxiv"
+          ]
+        },
+        "bibtexupdater": {
+          "label": "HALLUCINATED",
+          "confidence": 0.85,
+          "reason": "Status: doi_not_found; Errors: ['DOI does not resolve: 10.55910/mbwo.6329160'] | [Pre-screening confirms] DOI 10.55910/mbwo.6329160 returns 404 at doi.org",
+          "api_calls": 1,
+          "evaluated": true,
+          "subtest_results": {
+            "check_doi_resolves": false
+          },
+          "api_sources_queried": [
+            "doi.org"
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "FN-fabricated_doi-aa79e4b0",
+      "outcome_vs_reference": "FN",
+      "bibtex_key": "aa79e4b0c30e",
+      "bibtex_type": "inproceedings",
+      "ground_truth_label": "HALLUCINATED",
+      "hallucination_type": "fabricated_doi",
+      "difficulty_tier": 1,
+      "generation_method": "perturbation",
+      "source": "perturbation_scaleup",
+      "fields": {
+        "title": "Intelligent Online Selling Point Extraction for E-commerce Recommendation",
+        "author": "Xiaojie Guo and Shugen Wang and Hanqing Zhao and Shiliang Diao and Jiajia Chen and Zhuoye Ding and Zhen He and Jianchao Lu and Yun Xiao and Bo Long and Han Yu and Lingfei Wu",
+        "year": "2022",
+        "doi": "10.88882/9q1cuf3v1s",
+        "booktitle": "AAAI"
+      },
+      "gold_subtests": {
+        "doi_resolves": false,
+        "title_exists": true,
+        "authors_match": true,
+        "fields_complete": true,
+        "cross_db_agreement": false,
+        "venue_correct": true
+      },
+      "gold_explanation": "DOI fabricated: 10.88882/9q1cuf3v1s does not resolve",
+      "baselines": {
+        "doi_presence_heuristic": {
+          "label": "VALID",
+          "confidence": 0.6,
+          "reason": "DOI field present (heuristic shortcut)",
+          "api_calls": 0,
+          "evaluated": true,
+          "subtest_results": {},
+          "api_sources_queried": []
+        },
+        "doi_only": {
+          "label": "HALLUCINATED",
+          "confidence": 0.85,
+          "reason": "DOI returns HTTP 404 at doi.org | [Pre-screening confirms] DOI 10.88882/9q1cuf3v1s returns 404 at doi.org",
+          "api_calls": 1,
+          "evaluated": true,
+          "subtest_results": {
+            "doi_resolves": false,
+            "check_doi_resolves": false
+          },
+          "api_sources_queried": [
+            "doi.org"
+          ]
+        },
+        "hallucitechecker": {
+          "label": "VALID",
+          "confidence": 0.85,
+          "reason": "Title match in crossref (similarity=0.909, threshold=0.90): 'Intelligent online selling point extraction and generation for e‐commerce recommendation'",
+          "api_calls": 1,
+          "evaluated": true,
+          "subtest_results": {
+            "title_exists": true
+          },
+          "api_sources_queried": [
+            "crossref"
+          ]
+        },
+        "bibtexupdater": {
+          "label": "HALLUCINATED",
+          "confidence": 0.85,
+          "reason": "Status: doi_not_found; Errors: ['DOI does not resolve: 10.88882/9q1cuf3v1s'] | [Pre-screening confirms] DOI 10.88882/9q1cuf3v1s returns 404 at doi.org",
+          "api_calls": 1,
+          "evaluated": true,
+          "subtest_results": {
+            "check_doi_resolves": false
+          },
+          "api_sources_queried": [
+            "doi.org"
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "TP-chimeric_title-abeeb4b8",
+      "outcome_vs_reference": "TP",
+      "bibtex_key": "abeeb4b8da32",
+      "bibtex_type": "inproceedings",
+      "ground_truth_label": "HALLUCINATED",
+      "hallucination_type": "chimeric_title",
+      "difficulty_tier": 2,
+      "generation_method": "perturbation",
+      "source": "perturbation_scaleup",
+      "fields": {
+        "title": "Curriculum Learning for Complex Task Training",
+        "author": "Anurag Ajay and Aviral Kumar and Pulkit Agrawal and Sergey Levine and Ofir Nachum",
+        "year": "2021",
+        "booktitle": "ICLR"
+      },
+      "gold_subtests": {
+        "doi_resolves": null,
+        "title_exists": false,
+        "authors_match": true,
+        "fields_complete": true,
+        "cross_db_agreement": false,
+        "venue_correct": true
+      },
+      "gold_explanation": "Title 'Curriculum Learning for Complex Task Training' is fabricated; authors are real",
+      "baselines": {
+        "doi_presence_heuristic": {
+          "label": "HALLUCINATED",
+          "confidence": 0.8,
+          "reason": "No DOI field present (heuristic shortcut)",
+          "api_calls": 0,
+          "evaluated": true,
+          "subtest_results": {},
+          "api_sources_queried": []
+        },
+        "doi_only": {
+          "label": "VALID",
+          "confidence": 0.5,
+          "reason": "No DOI field present",
+          "api_calls": 0,
+          "evaluated": true,
+          "subtest_results": {},
+          "api_sources_queried": []
+        },
+        "hallucitechecker": {
+          "label": "HALLUCINATED",
+          "confidence": 0.6,
+          "reason": "No title match across ['crossref', 'arxiv'] (max similarity=0.600 < 0.90)",
+          "api_calls": 3,
+          "evaluated": true,
+          "subtest_results": {
+            "title_exists": false
+          },
+          "api_sources_queried": [
+            "crossref",
+            "arxiv"
+          ]
+        },
+        "bibtexupdater": {
+          "label": "UNCERTAIN",
+          "confidence": 0.5,
+          "reason": "Status: api_error; Abstention: the source lookup failed (API error), so this is not a verdict; Mismatched: ['title', 'author', 'year', 'venue']; Errors: ['DBLP: dblp dblp.org lookup did not complete: Retryable status', 'OpenReview: openreview api2.openreview.net lookup did not complete: challenge-gated; no credentials configured; set OPENREVIEW_USERNAME / OPENREVIEW_PASSWORD', 'Semantic Scholar: semanticscholar api.semanticscholar.org lookup did not complete: Retryable status', 'OpenAlex (fallback): openalex api.openalex.org lookup did not complete: Retryable status']",
+          "api_calls": 7,
+          "evaluated": true,
+          "subtest_results": {},
+          "api_sources_queried": [
+            "crossref",
+            "openalex",
+            "dblp",
+            "openreview",
+            "semanticscholar",
+            "crossref-fallback",
+            "openalex-fallback"
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "TP-wrong_venue-b79b4a67",
+      "outcome_vs_reference": "TP",
+      "bibtex_key": "b79b4a67bbb9",
+      "bibtex_type": "inproceedings",
+      "ground_truth_label": "HALLUCINATED",
+      "hallucination_type": "wrong_venue",
+      "difficulty_tier": 2,
+      "generation_method": "perturbation",
+      "source": "perturbation_scaleup",
+      "fields": {
+        "title": "simpleKT: A Simple But Tough-to-Beat Baseline for Knowledge Tracing",
+        "author": "Zitao Liu and Qiongqiong Liu and Jiahao Chen and Shuyan Huang and Weiqi Luo",
+        "year": "2023",
+        "booktitle": "EMNLP"
+      },
+      "gold_subtests": {
+        "doi_resolves": null,
+        "title_exists": true,
+        "authors_match": true,
+        "fields_complete": true,
+        "cross_db_agreement": false,
+        "venue_correct": false
+      },
+      "gold_explanation": "Venue changed to 'EMNLP' (original was different)",
+      "baselines": {
+        "doi_presence_heuristic": {
+          "label": "HALLUCINATED",
+          "confidence": 0.8,
+          "reason": "No DOI field present (heuristic shortcut)",
+          "api_calls": 0,
+          "evaluated": true,
+          "subtest_results": {},
+          "api_sources_queried": []
+        },
+        "doi_only": {
+          "label": "VALID",
+          "confidence": 0.5,
+          "reason": "No DOI field present",
+          "api_calls": 0,
+          "evaluated": true,
+          "subtest_results": {},
+          "api_sources_queried": []
+        },
+        "hallucitechecker": {
+          "label": "HALLUCINATED",
+          "confidence": 0.6,
+          "reason": "No title match across ['crossref', 'arxiv'] (max similarity=0.672 < 0.90)",
+          "api_calls": 3,
+          "evaluated": true,
+          "subtest_results": {
+            "title_exists": false
+          },
+          "api_sources_queried": [
+            "crossref",
+            "arxiv"
+          ]
+        },
+        "bibtexupdater": {
+          "label": "HALLUCINATED",
+          "confidence": 0.67589,
+          "reason": "Status: given_name_substitution; Mismatched: ['author']; Unconfirmed (not compared): ['venue']; Errors: ['DBLP: dblp dblp.org lookup did not complete: HTTP 202', 'OpenReview: openreview api2.openreview.net lookup did not complete: challenge-gated; no credentials configured; set OPENREVIEW_USERNAME / OPENREVIEW_PASSWORD', 'Semantic Scholar: semanticscholar api.semanticscholar.org lookup did not complete: Retryable status']",
+          "api_calls": 5,
+          "evaluated": true,
+          "subtest_results": {},
+          "api_sources_queried": [
+            "crossref",
+            "dblp",
+            "openreview",
+            "semanticscholar",
+            "openalex"
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "FN-wrong_venue-7ee3e320",
+      "outcome_vs_reference": "FN",
+      "bibtex_key": "7ee3e320c1ab",
+      "bibtex_type": "inproceedings",
+      "ground_truth_label": "HALLUCINATED",
+      "hallucination_type": "wrong_venue",
+      "difficulty_tier": 2,
+      "generation_method": "perturbation",
+      "source": null,
+      "fields": {
+        "title": "Tiny Recursive Reasoning with Mamba-2 Attention Hybrid",
+        "author": "Wenlong Wang and Fergal Reid",
+        "year": "2026",
+        "doi": "10.48550/arXiv.2602.12078v1",
+        "booktitle": "NeurIPS"
+      },
+      "gold_subtests": {
+        "doi_resolves": true,
+        "title_exists": true,
+        "authors_match": true,
+        "venue_correct": false,
+        "fields_complete": true,
+        "cross_db_agreement": false
+      },
+      "gold_explanation": "Venue changed to 'NeurIPS' (original was different)",
+      "baselines": {
+        "doi_presence_heuristic": {
+          "label": "VALID",
+          "confidence": 0.6,
+          "reason": "DOI field present (heuristic shortcut)",
+          "api_calls": 0,
+          "evaluated": true,
+          "subtest_results": {},
+          "api_sources_queried": []
+        },
+        "doi_only": {
+          "label": "HALLUCINATED",
+          "confidence": 0.75,
+          "reason": "DOI returns HTTP 404 at doi.org",
+          "api_calls": 1,
+          "evaluated": true,
+          "subtest_results": {
+            "doi_resolves": false
+          },
+          "api_sources_queried": [
+            "doi.org"
+          ]
+        },
+        "hallucitechecker": {
+          "label": "VALID",
+          "confidence": 0.85,
+          "reason": "Title match in arxiv (similarity=1.000, threshold=0.90): 'Tiny Recursive Reasoning with Mamba-2 Attention Hybrid'",
+          "api_calls": 2,
+          "evaluated": true,
+          "subtest_results": {
+            "title_exists": true
+          },
+          "api_sources_queried": [
+            "crossref",
+            "arxiv"
+          ]
+        },
+        "bibtexupdater": {
+          "label": "UNCERTAIN",
+          "confidence": 0.5,
+          "reason": "Status: unconfirmed; Abstention: a record was found but a claimed field could not be confirmed against any source, so this is not a verdict; Unconfirmed (not compared): ['venue']; Errors: ['DBLP: dblp dblp.org lookup did not complete: HTTP 202', 'OpenReview: openreview api2.openreview.net lookup did not complete: challenge-gated; no credentials configured; set OPENREVIEW_USERNAME / OPENREVIEW_PASSWORD', \"OpenAlex: openalex lookup did not complete: circuit open for service 'openalex'\", \"Semantic Scholar: semanticscholar lookup did not complete: circuit open for service 'semanticscholar'\", \"OpenAlex (fallback): openalex lookup did not complete: circuit open for service 'openalex'\"]",
+          "api_calls": 8,
+          "evaluated": true,
+          "subtest_results": {},
+          "api_sources_queried": [
+            "crossref",
+            "dblp",
+            "openreview",
+            "openalex",
+            "semanticscholar",
+            "crossref-fallback",
+            "openalex-fallback",
+            "arxiv"
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "TP-preprint_as_published-a641868c",
+      "outcome_vs_reference": "TP",
+      "bibtex_key": "a641868c1b4f",
+      "bibtex_type": "inproceedings",
+      "ground_truth_label": "HALLUCINATED",
+      "hallucination_type": "preprint_as_published",
+      "difficulty_tier": 2,
+      "generation_method": "perturbation",
+      "source": "perturbation_scaleup",
+      "fields": {
+        "title": "Spherical Message Passing for 3D Molecular Graphs",
+        "author": "Yi Liu and Limei Wang and Meng Liu and Yuchao Lin and Xuan Zhang and Bora Oztekin and Shuiwang Ji",
+        "year": "2022",
+        "booktitle": "ACL"
+      },
+      "gold_subtests": {
+        "doi_resolves": null,
+        "title_exists": true,
+        "authors_match": true,
+        "fields_complete": true,
+        "cross_db_agreement": false,
+        "venue_correct": false
+      },
+      "gold_explanation": "Preprint falsely cited as published at 'ACL'",
+      "baselines": {
+        "doi_presence_heuristic": {
+          "label": "HALLUCINATED",
+          "confidence": 0.8,
+          "reason": "No DOI field present (heuristic shortcut)",
+          "api_calls": 0,
+          "evaluated": true,
+          "subtest_results": {},
+          "api_sources_queried": []
+        },
+        "doi_only": {
+          "label": "VALID",
+          "confidence": 0.5,
+          "reason": "No DOI field present",
+          "api_calls": 0,
+          "evaluated": true,
+          "subtest_results": {},
+          "api_sources_queried": []
+        },
+        "hallucitechecker": {
+          "label": "HALLUCINATED",
+          "confidence": 0.6,
+          "reason": "No title match across ['crossref', 'arxiv'] (max similarity=0.810 < 0.90)",
+          "api_calls": 3,
+          "evaluated": true,
+          "subtest_results": {
+            "title_exists": false
+          },
+          "api_sources_queried": [
+            "crossref",
+            "arxiv"
+          ]
+        },
+        "bibtexupdater": {
+          "label": "HALLUCINATED",
+          "confidence": 0.638138,
+          "reason": "Status: title_mismatch; Mismatched: ['title', 'author', 'venue']; Errors: ['DBLP: dblp dblp.org lookup did not complete: HTTP 202', 'OpenReview: openreview api2.openreview.net lookup did not complete: challenge-gated; no credentials configured; set OPENREVIEW_USERNAME / OPENREVIEW_PASSWORD', \"OpenAlex: openalex lookup did not complete: circuit open for service 'openalex'\", \"Semantic Scholar: semanticscholar lookup did not complete: circuit open for service 'semanticscholar'\"]",
+          "api_calls": 5,
+          "evaluated": true,
+          "subtest_results": {},
+          "api_sources_queried": [
+            "crossref",
+            "dblp",
+            "openreview",
+            "openalex",
+            "semanticscholar"
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "FN-preprint_as_published-b90a5e9e",
+      "outcome_vs_reference": "FN",
+      "bibtex_key": "b90a5e9e0f25",
+      "bibtex_type": "inproceedings",
+      "ground_truth_label": "HALLUCINATED",
+      "hallucination_type": "preprint_as_published",
+      "difficulty_tier": 2,
+      "generation_method": "perturbation",
+      "source": "perturbation_scaleup",
+      "fields": {
+        "title": "Learning to Search Feasible and Infeasible Regions of Routing Problems with Flexible Neural k-Opt",
+        "author": "Yining Ma and Zhiguang Cao and Yeow Meng Chee",
+        "year": "2023",
+        "booktitle": "WWW"
+      },
+      "gold_subtests": {
+        "doi_resolves": null,
+        "title_exists": true,
+        "authors_match": true,
+        "fields_complete": true,
+        "cross_db_agreement": false,
+        "venue_correct": false
+      },
+      "gold_explanation": "Preprint falsely cited as published at 'WWW'",
+      "baselines": {
+        "doi_presence_heuristic": {
+          "label": "HALLUCINATED",
+          "confidence": 0.8,
+          "reason": "No DOI field present (heuristic shortcut)",
+          "api_calls": 0,
+          "evaluated": true,
+          "subtest_results": {},
+          "api_sources_queried": []
+        },
+        "doi_only": {
+          "label": "VALID",
+          "confidence": 0.5,
+          "reason": "No DOI field present",
+          "api_calls": 0,
+          "evaluated": true,
+          "subtest_results": {},
+          "api_sources_queried": []
+        },
+        "hallucitechecker": {
+          "label": "VALID",
+          "confidence": 0.85,
+          "reason": "Title match in crossref (similarity=1.000, threshold=0.90): 'Learning to Search Feasible and Infeasible Regions of Routing Problems with Flexible Neural k-Opt'",
+          "api_calls": 1,
+          "evaluated": true,
+          "subtest_results": {
+            "title_exists": true
+          },
+          "api_sources_queried": [
+            "crossref"
+          ]
+        },
+        "bibtexupdater": {
+          "label": "HALLUCINATED",
+          "confidence": 0.6105104,
+          "reason": "Status: venue_mismatch; Mismatched: ['venue']; Errors: ['DBLP: dblp dblp.org lookup did not complete: HTTP 202', 'OpenReview: openreview api2.openreview.net lookup did not complete: challenge-gated; no credentials configured; set OPENREVIEW_USERNAME / OPENREVIEW_PASSWORD', \"OpenAlex: openalex lookup did not complete: circuit open for service 'openalex'\", \"Semantic Scholar: semanticscholar lookup did not complete: circuit open for service 'semanticscholar'\"]",
+          "api_calls": 5,
+          "evaluated": true,
+          "subtest_results": {},
+          "api_sources_queried": [
+            "crossref",
+            "dblp",
+            "openreview",
+            "openalex",
+            "semanticscholar"
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "TP-swapped_authors-ac682a14",
+      "outcome_vs_reference": "TP",
+      "bibtex_key": "ac682a143b1d",
+      "bibtex_type": "inproceedings",
+      "ground_truth_label": "HALLUCINATED",
+      "hallucination_type": "swapped_authors",
+      "difficulty_tier": 2,
+      "generation_method": "perturbation",
+      "source": "perturbation_scaleup",
+      "fields": {
+        "title": "Representation Balancing Offline Model-based Reinforcement Learning",
+        "author": "Ye Yuan and Yuda Song and Zhengyi Luo and Wen Sun and Kris M. Kitani",
+        "year": "2021",
+        "booktitle": "ICLR"
+      },
+      "gold_subtests": {
+        "doi_resolves": null,
+        "title_exists": true,
+        "authors_match": false,
+        "fields_complete": true,
+        "cross_db_agreement": false,
+        "venue_correct": true
+      },
+      "gold_explanation": "Authors swapped from '00072022transform2act:'",
+      "baselines": {
+        "doi_presence_heuristic": {
+          "label": "HALLUCINATED",
+          "confidence": 0.8,
+          "reason": "No DOI field present (heuristic shortcut)",
+          "api_calls": 0,
+          "evaluated": true,
+          "subtest_results": {},
+          "api_sources_queried": []
+        },
+        "doi_only": {
+          "label": "VALID",
+          "confidence": 0.5,
+          "reason": "No DOI field present",
+          "api_calls": 0,
+          "evaluated": true,
+          "subtest_results": {},
+          "api_sources_queried": []
+        },
+        "hallucitechecker": {
+          "label": "HALLUCINATED",
+          "confidence": 0.6,
+          "reason": "No title match across ['crossref', 'arxiv'] (max similarity=0.784 < 0.90)",
+          "api_calls": 3,
+          "evaluated": true,
+          "subtest_results": {
+            "title_exists": false
+          },
+          "api_sources_queried": [
+            "crossref",
+            "arxiv"
+          ]
+        },
+        "bibtexupdater": {
+          "label": "HALLUCINATED",
+          "confidence": 0.639425,
+          "reason": "Status: title_mismatch; Mismatched: ['title', 'author', 'year', 'venue']; Errors: ['DBLP: dblp dblp.org lookup did not complete: HTTP 202', 'OpenReview: openreview api2.openreview.net lookup did not complete: challenge-gated; no credentials configured; set OPENREVIEW_USERNAME / OPENREVIEW_PASSWORD', \"OpenAlex: openalex lookup did not complete: circuit open for service 'openalex'\", \"Semantic Scholar: semanticscholar lookup did not complete: circuit open for service 'semanticscholar'\", \"OpenAlex (fallback): openalex lookup did not complete: circuit open for service 'openalex'\"]",
+          "api_calls": 7,
+          "evaluated": true,
+          "subtest_results": {},
+          "api_sources_queried": [
+            "crossref",
+            "dblp",
+            "openreview",
+            "openalex",
+            "semanticscholar",
+            "crossref-fallback",
+            "openalex-fallback"
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "FN-swapped_authors-a4820127",
+      "outcome_vs_reference": "FN",
+      "bibtex_key": "a482012730fe",
+      "bibtex_type": "inproceedings",
+      "ground_truth_label": "HALLUCINATED",
+      "hallucination_type": "swapped_authors",
+      "difficulty_tier": 2,
+      "generation_method": "real_world",
+      "source": "gptzero_neurips2025",
+      "fields": {
+        "author": "Junyeong Lee and Yiseong Kim and Seungju Park and Hyunjik Lee",
+        "title": "Softmatch: Addressing the quantity-quality trade-off in semi-supervised learning",
+        "year": "2023"
+      },
+      "gold_subtests": {
+        "doi_resolves": null,
+        "title_exists": true,
+        "authors_match": false,
+        "venue_correct": true,
+        "fields_complete": true,
+        "cross_db_agreement": false
+      },
+      "gold_explanation": "Real-world hallucination from NeurIPS 2025 accepted paper 'Robust Label Proportions Learning'. Found by GPTZero analysis (scan type: Scan  AI*). Comment: Title matches this paper. No match in NeurIPS volume 36.. URL: https://gptzero.me/news/neurips/",
+      "baselines": {
+        "doi_presence_heuristic": {
+          "label": "HALLUCINATED",
+          "confidence": 0.8,
+          "reason": "No DOI field present (heuristic shortcut)",
+          "api_calls": 0,
+          "evaluated": true,
+          "subtest_results": {},
+          "api_sources_queried": []
+        },
+        "doi_only": {
+          "label": "VALID",
+          "confidence": 0.5,
+          "reason": "No DOI field present",
+          "api_calls": 0,
+          "evaluated": true,
+          "subtest_results": {},
+          "api_sources_queried": []
+        },
+        "hallucitechecker": {
+          "label": "VALID",
+          "confidence": 0.85,
+          "reason": "Title match in arxiv (similarity=1.000, threshold=0.90): 'SoftMatch: Addressing the Quantity-Quality Trade-off in Semi-supervised Learning'",
+          "api_calls": 2,
+          "evaluated": true,
+          "subtest_results": {
+            "title_exists": true
+          },
+          "api_sources_queried": [
+            "crossref",
+            "arxiv"
+          ]
+        },
+        "bibtexupdater": {
+          "label": "HALLUCINATED",
+          "confidence": 0.638138,
+          "reason": "Status: title_mismatch; Mismatched: ['title', 'author', 'year']; Errors: ['DBLP: dblp dblp.org lookup did not complete: HTTP 202', 'OpenReview: openreview api2.openreview.net lookup did not complete: challenge-gated; no credentials configured; set OPENREVIEW_USERNAME / OPENREVIEW_PASSWORD', \"OpenAlex: openalex lookup did not complete: circuit open for service 'openalex'\", \"Semantic Scholar: semanticscholar lookup did not complete: circuit open for service 'semanticscholar'\"]",
+          "api_calls": 5,
+          "evaluated": true,
+          "subtest_results": {},
+          "api_sources_queried": [
+            "crossref",
+            "dblp",
+            "openreview",
+            "openalex",
+            "semanticscholar"
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "TP-nonexistent_venue-b8df2054",
+      "outcome_vs_reference": "TP",
+      "bibtex_key": "b8df20541167",
+      "bibtex_type": "inproceedings",
+      "ground_truth_label": "HALLUCINATED",
+      "hallucination_type": "nonexistent_venue",
+      "difficulty_tier": 1,
+      "generation_method": "perturbation",
+      "source": "perturbation_scaleup",
+      "fields": {
+        "title": "Are Neural Rankers still Outperformed by Gradient Boosted Decision Trees?",
+        "author": "Zhen Qin and Le Yan and Honglei Zhuang and Yi Tay and Rama Kumar Pasumarthi and Xuanhui Wang and Michael Bendersky and Marc Najork",
+        "year": "2021",
+        "booktitle": "International Journal of Context Learning"
+      },
+      "gold_subtests": {
+        "doi_resolves": null,
+        "title_exists": true,
+        "authors_match": true,
+        "fields_complete": true,
+        "cross_db_agreement": false,
+        "venue_correct": false
+      },
+      "gold_explanation": "Venue fabricated: 'International Journal of Context Learning' does not exist",
+      "baselines": {
+        "doi_presence_heuristic": {
+          "label": "HALLUCINATED",
+          "confidence": 0.8,
+          "reason": "No DOI field present (heuristic shortcut)",
+          "api_calls": 0,
+          "evaluated": true,
+          "subtest_results": {},
+          "api_sources_queried": []
+        },
+        "doi_only": {
+          "label": "VALID",
+          "confidence": 0.5,
+          "reason": "No DOI field present",
+          "api_calls": 0,
+          "evaluated": true,
+          "subtest_results": {},
+          "api_sources_queried": []
+        },
+        "hallucitechecker": {
+          "label": "HALLUCINATED",
+          "confidence": 0.6,
+          "reason": "No title match across ['crossref', 'arxiv'] (max similarity=0.661 < 0.90)",
+          "api_calls": 3,
+          "evaluated": true,
+          "subtest_results": {
+            "title_exists": false
+          },
+          "api_sources_queried": [
+            "crossref",
+            "arxiv"
+          ]
+        },
+        "bibtexupdater": {
+          "label": "UNCERTAIN",
+          "confidence": 0.5,
+          "reason": "Status: api_error; Abstention: the source lookup failed (API error), so this is not a verdict; Mismatched: ['title', 'author']; Unconfirmed (not compared): ['venue']; Errors: ['DBLP: dblp dblp.org lookup did not complete: HTTP 202', 'OpenReview: openreview api2.openreview.net lookup did not complete: challenge-gated; no credentials configured; set OPENREVIEW_USERNAME / OPENREVIEW_PASSWORD', \"OpenAlex: openalex lookup did not complete: circuit open for service 'openalex'\", \"Semantic Scholar: semanticscholar lookup did not complete: circuit open for service 'semanticscholar'\", \"OpenAlex (fallback): openalex lookup did not complete: circuit open for service 'openalex'\"]",
+          "api_calls": 7,
+          "evaluated": true,
+          "subtest_results": {},
+          "api_sources_queried": [
+            "crossref",
+            "dblp",
+            "openreview",
+            "openalex",
+            "semanticscholar",
+            "crossref-fallback",
+            "openalex-fallback"
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "FN-nonexistent_venue-72f55675",
+      "outcome_vs_reference": "FN",
+      "bibtex_key": "72f55675658a",
+      "bibtex_type": "article",
+      "ground_truth_label": "HALLUCINATED",
+      "hallucination_type": "nonexistent_venue",
+      "difficulty_tier": 1,
+      "generation_method": "perturbation",
+      "source": null,
+      "fields": {
+        "title": "Pedagogically-Inspired Data Synthesis for Language Model Knowledge Distillation",
+        "author": "Bowei He and Yankai Chen and Xiaokun Zhang and Linghe Kong and Philip S. Yu and Xue Liu and Chen Ma",
+        "year": "2026",
+        "doi": "10.48550/arXiv.2602.12172v1",
+        "journal": "Symposium on Regularization Techniques"
+      },
+      "gold_subtests": {
+        "doi_resolves": true,
+        "title_exists": true,
+        "authors_match": true,
+        "venue_correct": false,
+        "fields_complete": true,
+        "cross_db_agreement": false
+      },
+      "gold_explanation": "Venue fabricated: 'Symposium on Regularization Techniques' does not exist",
+      "baselines": {
+        "doi_presence_heuristic": {
+          "label": "VALID",
+          "confidence": 0.6,
+          "reason": "DOI field present (heuristic shortcut)",
+          "api_calls": 0,
+          "evaluated": true,
+          "subtest_results": {},
+          "api_sources_queried": []
+        },
+        "doi_only": {
+          "label": "HALLUCINATED",
+          "confidence": 0.75,
+          "reason": "DOI returns HTTP 404 at doi.org",
+          "api_calls": 1,
+          "evaluated": true,
+          "subtest_results": {
+            "doi_resolves": false
+          },
+          "api_sources_queried": [
+            "doi.org"
+          ]
+        },
+        "hallucitechecker": {
+          "label": "VALID",
+          "confidence": 0.85,
+          "reason": "Title match in arxiv (similarity=1.000, threshold=0.90): 'Pedagogically-Inspired Data Synthesis for Language Model Knowledge Distillation'",
+          "api_calls": 2,
+          "evaluated": true,
+          "subtest_results": {
+            "title_exists": true
+          },
+          "api_sources_queried": [
+            "crossref",
+            "arxiv"
+          ]
+        },
+        "bibtexupdater": {
+          "label": "UNCERTAIN",
+          "confidence": 0.5,
+          "reason": "Status: unconfirmed; Abstention: a record was found but a claimed field could not be confirmed against any source, so this is not a verdict; Unconfirmed (not compared): ['venue']; Errors: ['DBLP: dblp dblp.org lookup did not complete: HTTP 202', 'OpenReview: openreview api2.openreview.net lookup did not complete: challenge-gated; no credentials configured; set OPENREVIEW_USERNAME / OPENREVIEW_PASSWORD', 'Semantic Scholar: semanticscholar api.semanticscholar.org lookup did not complete: Retryable status']",
+          "api_calls": 6,
+          "evaluated": true,
+          "subtest_results": {},
+          "api_sources_queried": [
+            "crossref",
+            "dblp",
+            "openreview",
+            "semanticscholar",
+            "openalex",
+            "arxiv"
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "TP-future_date-cc62d714",
+      "outcome_vs_reference": "TP",
+      "bibtex_key": "cc62d71412cf",
+      "bibtex_type": "inproceedings",
+      "ground_truth_label": "HALLUCINATED",
+      "hallucination_type": "future_date",
+      "difficulty_tier": 1,
+      "generation_method": "perturbation",
+      "source": "perturbation_scaleup",
+      "fields": {
+        "title": "SCoRe: Pre-Training for Context Representation in Conversational Semantic Parsing",
+        "author": "Tao Yu and Rui Zhang and Alex Polozov and Christopher Meek and Ahmed Hassan Awadallah",
+        "year": "2034",
+        "booktitle": "ICLR"
+      },
+      "gold_subtests": {
+        "doi_resolves": null,
+        "title_exists": true,
+        "authors_match": true,
+        "fields_complete": true,
+        "cross_db_agreement": false,
+        "venue_correct": true
+      },
+      "gold_explanation": "Publication year 2034 is in the future",
+      "baselines": {
+        "doi_presence_heuristic": {
+          "label": "HALLUCINATED",
+          "confidence": 0.8,
+          "reason": "No DOI field present (heuristic shortcut)",
+          "api_calls": 0,
+          "evaluated": true,
+          "subtest_results": {},
+          "api_sources_queried": []
+        },
+        "doi_only": {
+          "label": "HALLUCINATED",
+          "confidence": 0.95,
+          "reason": "No DOI field present | [Pre-screening override] Publication year 2034 is in the future",
+          "api_calls": 0,
+          "evaluated": true,
+          "subtest_results": {
+            "check_year_bounds": false
+          },
+          "api_sources_queried": []
+        },
+        "hallucitechecker": {
+          "label": "HALLUCINATED",
+          "confidence": 0.6,
+          "reason": "No title match across ['crossref', 'arxiv'] (max similarity=0.555 < 0.90)",
+          "api_calls": 3,
+          "evaluated": true,
+          "subtest_results": {
+            "title_exists": false
+          },
+          "api_sources_queried": [
+            "crossref",
+            "arxiv"
+          ]
+        },
+        "bibtexupdater": {
+          "label": "HALLUCINATED",
+          "confidence": 0.95,
+          "reason": "Status: future_date; Errors: ['Year validation failed: 2034'] | [Pre-screening confirms] Publication year 2034 is in the future",
+          "api_calls": 0,
+          "evaluated": true,
+          "subtest_results": {
+            "check_year_bounds": false
+          },
+          "api_sources_queried": []
+        }
+      }
+    }
+  ]
+}

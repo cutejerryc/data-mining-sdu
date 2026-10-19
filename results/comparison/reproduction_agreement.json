@@ -1,0 +1,316 @@
+{
+  "rows": [
+    {
+      "released_file": "doi_only_dev_public",
+      "our_tag": "doi_only",
+      "split": "dev_public",
+      "stance": "conservative",
+      "class": "reproduced",
+      "released_available": true,
+      "ours_available": true,
+      "metrics": {
+        "detection_rate": {
+          "released": 0.2146,
+          "ours": 0.2146,
+          "abs_diff": 0.0,
+          "rel_diff": 0.0
+        },
+        "false_positive_rate": {
+          "released": 0.0437,
+          "ours": 0.0437,
+          "abs_diff": 0.0,
+          "rel_diff": 0.0
+        },
+        "f1_hallucination": {
+          "released": 0.3433,
+          "ours": 0.3433,
+          "abs_diff": 0.0,
+          "rel_diff": 0.0
+        },
+        "tier_weighted_f1": {
+          "released": 0.265,
+          "ours": 0.265,
+          "abs_diff": 0.0,
+          "rel_diff": 0.0
+        },
+        "mcc": {
+          "released": 0.2469,
+          "ours": 0.2469,
+          "abs_diff": 0.0,
+          "rel_diff": 0.0
+        },
+        "auroc": {
+          "released": 0.5851,
+          "ours": 0.5851,
+          "abs_diff": 0.0,
+          "rel_diff": 0.0
+        },
+        "ece": {
+          "released": 0.0878,
+          "ours": 0.0878,
+          "abs_diff": 0.0,
+          "rel_diff": 0.0
+        }
+      },
+      "released_run_timestamp": "2026-10-15T07:37:51.605578+00:00",
+      "released_split_sha256": "8cfb4a95ccac59624e03b07199368e7a61b124f426b661174757e38eacbde4ea",
+      "our_split_sha256": "6780a40fd5c6d5695b0696cae8d2da885ab74142b9ab4871424a428e3e3c6dda",
+      "same_split_hash": false
+    },
+    {
+      "released_file": "doi_only_test_public",
+      "our_tag": "doi_only",
+      "split": "test_public",
+      "stance": "conservative",
+      "class": "reproduced",
+      "released_available": true,
+      "ours_available": true,
+      "metrics": {
+        "detection_rate": {
+          "released": 0.1889,
+          "ours": 0.1889,
+          "abs_diff": 0.0,
+          "rel_diff": 0.0
+        },
+        "false_positive_rate": {
+          "released": 0.0423,
+          "ours": 0.0423,
+          "abs_diff": 0.0,
+          "rel_diff": 0.0
+        },
+        "f1_hallucination": {
+          "released": 0.3113,
+          "ours": 0.3113,
+          "abs_diff": 0.0,
+          "rel_diff": 0.0
+        },
+        "tier_weighted_f1": {
+          "released": 0.2269,
+          "ours": 0.2269,
+          "abs_diff": 0.0,
+          "rel_diff": 0.0
+        },
+        "mcc": {
+          "released": 0.2072,
+          "ours": 0.2072,
+          "abs_diff": 0.0,
+          "rel_diff": 0.0
+        },
+        "auroc": {
+          "released": 0.5687,
+          "ours": 0.5696,
+          "abs_diff": 0.0009,
+          "rel_diff": 0.0016
+        },
+        "ece": {
+          "released": 0.1424,
+          "ours": 0.142,
+          "abs_diff": 0.0004,
+          "rel_diff": 0.003
+        }
+      },
+      "released_run_timestamp": "2026-10-15T07:29:18.272149+00:00",
+      "released_split_sha256": "e42ef2cbe2b5550768c191f0526d9c75935adda5fd630dba8724e479975907d1",
+      "our_split_sha256": "22273a94a897c876b39ec3dc0f34ea656eda45270b6d8725da02f30c6724064c",
+      "same_split_hash": false
+    },
+    {
+      "released_file": "bibtexupdater_dev_public",
+      "our_tag": "bibtexupdater",
+      "split": "dev_public",
+      "stance": "conservative",
+      "class": "reproduced",
+      "released_available": true,
+      "ours_available": false
+    },
+    {
+      "released_file": "bibtexupdater_test_public",
+      "our_tag": "bibtexupdater",
+      "split": "test_public",
+      "stance": "conservative",
+      "class": "reproduced",
+      "released_available": true,
+      "ours_available": true,
+      "metrics": {
+        "detection_rate": {
+          "released": 0.8359,
+          "ours": 0.9848,
+          "abs_diff": 0.1489,
+          "rel_diff": 0.1781
+        },
+        "false_positive_rate": {
+          "released": 0.0717,
+          "ours": 0.309,
+          "abs_diff": 0.2374,
+          "rel_diff": 3.3121
+        },
+        "f1_hallucination": {
+          "released": 0.8902,
+          "ours": 0.9087,
+          "abs_diff": 0.0184,
+          "rel_diff": 0.0207
+        },
+        "tier_weighted_f1": {
+          "released": 0.905,
+          "ours": 0.9442,
+          "abs_diff": 0.0392,
+          "rel_diff": 0.0434
+        },
+        "mcc": {
+          "released": 0.742,
+          "ours": 0.7387,
+          "abs_diff": 0.0032,
+          "rel_diff": 0.0044
+        },
+        "auroc": {
+          "released": 0.92,
+          "ours": 0.8009,
+          "abs_diff": 0.119,
+          "rel_diff": 0.1294
+        },
+        "ece": {
+          "released": 0.3272,
+          "ours": 0.2027,
+          "abs_diff": 0.1244,
+          "rel_diff": 0.3803
+        }
+      },
+      "released_run_timestamp": null,
+      "released_split_sha256": null,
+      "our_split_sha256": "22273a94a897c876b39ec3dc0f34ea656eda45270b6d8725da02f30c6724064c",
+      "same_split_hash": false
+    },
+    {
+      "released_file": "cascade_db_diagnosis_dev_public",
+      "our_tag": "cascade_*",
+      "split": "dev_public",
+      "stance": "conservative",
+      "class": "adapted",
+      "released_available": true,
+      "ours_available": false
+    },
+    {
+      "released_file": "cascade_db_diagnosis_test_public",
+      "our_tag": "cascade_*",
+      "split": "test_public",
+      "stance": "conservative",
+      "class": "adapted",
+      "released_available": true,
+      "ours_available": true,
+      "metrics": {
+        "detection_rate": {
+          "released": 0.9891,
+          "ours": 0.9531,
+          "abs_diff": 0.036,
+          "rel_diff": 0.0364
+        },
+        "false_positive_rate": {
+          "released": 0.0423,
+          "ours": 0.2614,
+          "abs_diff": 0.2191,
+          "rel_diff": 5.174
+        },
+        "f1_hallucination": {
+          "released": 0.9806,
+          "ours": 0.9037,
+          "abs_diff": 0.0769,
+          "rel_diff": 0.0784
+        },
+        "tier_weighted_f1": {
+          "released": 0.9845,
+          "ours": 0.9336,
+          "abs_diff": 0.051,
+          "rel_diff": 0.0518
+        },
+        "mcc": {
+          "released": 0.9511,
+          "ours": 0.7265,
+          "abs_diff": 0.2245,
+          "rel_diff": 0.2361
+        },
+        "auroc": {
+          "released": 0.9836,
+          "ours": 0.832,
+          "abs_diff": 0.1516,
+          "rel_diff": 0.1541
+        },
+        "ece": {
+          "released": 0.0767,
+          "ours": 0.159,
+          "abs_diff": 0.0823,
+          "rel_diff": 1.0727
+        }
+      },
+      "released_run_timestamp": "2026-10-15T07:15:17.765774+00:00",
+      "released_split_sha256": "e42ef2cbe2b5550768c191f0526d9c75935adda5fd630dba8724e479975907d1",
+      "our_split_sha256": "22273a94a897c876b39ec3dc0f34ea656eda45270b6d8725da02f30c6724064c",
+      "same_split_hash": false
+    },
+    {
+      "released_file": "cascade_db_diagnosis_aggressive_dev_public",
+      "our_tag": "cascade_*",
+      "split": "dev_public",
+      "stance": "aggressive",
+      "class": "adapted",
+      "released_available": true,
+      "ours_available": false
+    },
+    {
+      "released_file": "cascade_db_diagnosis_aggressive_test_public",
+      "our_tag": "cascade_*",
+      "split": "test_public",
+      "stance": "aggressive",
+      "class": "adapted",
+      "released_available": true,
+      "ours_available": true,
+      "metrics": {
+        "detection_rate": {
+          "released": 0.9905,
+          "ours": 0.9542,
+          "abs_diff": 0.0363,
+          "rel_diff": 0.0366
+        },
+        "false_positive_rate": {
+          "released": 0.0423,
+          "ours": 0.2638,
+          "abs_diff": 0.2215,
+          "rel_diff": 5.2308
+        },
+        "f1_hallucination": {
+          "released": 0.983,
+          "ours": 0.905,
+          "abs_diff": 0.078,
+          "rel_diff": 0.0793
+        },
+        "tier_weighted_f1": {
+          "released": 0.9869,
+          "ours": 0.9349,
+          "abs_diff": 0.052,
+          "rel_diff": 0.0527
+        },
+        "mcc": {
+          "released": 0.9535,
+          "ours": 0.7265,
+          "abs_diff": 0.2269,
+          "rel_diff": 0.238
+        },
+        "auroc": {
+          "released": 0.9804,
+          "ours": 0.8295,
+          "abs_diff": 0.1509,
+          "rel_diff": 0.1539
+        },
+        "ece": {
+          "released": 0.1079,
+          "ours": 0.1667,
+          "abs_diff": 0.0588,
+          "rel_diff": 0.545
+        }
+      },
+      "released_run_timestamp": "2026-10-15T07:15:17.766763+00:00",
+      "released_split_sha256": "e42ef2cbe2b5550768c191f0526d9c75935adda5fd630dba8724e479975907d1",
+      "our_split_sha256": "22273a94a897c876b39ec3dc0f34ea656eda45270b6d8725da02f30c6724064c",
+      "same_split_hash": false
+    }
+  ]
+}

@@ -1,0 +1,1105 @@
+{
+  "environment": {
+    "python": "3.11.5",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "hallmark_version": "0.0.post1.dev1+g80ce8ded4",
+    "hallmark_commit": "80ce8ded446ad6d1792c62bf7c18d015eade3779",
+    "hallmark_repo": "E:\\Desktop\\data mining\\project\\repos\\hallmark",
+    "data_version": "v1.2",
+    "reference_year": 2026
+  },
+  "data_version": "v1.2",
+  "reference_year": 2026,
+  "splits": {
+    "dev_public": {
+      "split": "dev_public",
+      "file": "data\\v1.2\\dev_public.jsonl",
+      "sha256": "6780a40fd5c6d5695b0696cae8d2da885ab74142b9ab4871424a428e3e3c6dda",
+      "size_bytes": 1032957,
+      "n_entries": 1119,
+      "n_valid": 504,
+      "n_hallucinated": 615,
+      "label_values": {
+        "HALLUCINATED": 615,
+        "VALID": 504
+      },
+      "tier_distribution": {
+        "1": 148,
+        "2": 288,
+        "3": 179
+      },
+      "type_distribution": {
+        "arxiv_version_mismatch": 49,
+        "chimeric_title": 47,
+        "fabricated_doi": 38,
+        "future_date": 30,
+        "hybrid_fabrication": 30,
+        "merged_citation": 30,
+        "near_miss_title": 52,
+        "nonexistent_venue": 39,
+        "partial_author_list": 32,
+        "placeholder_authors": 41,
+        "plausible_fabrication": 78,
+        "preprint_as_published": 31,
+        "swapped_authors": 70,
+        "wrong_venue": 48
+      },
+      "generation_method_distribution": {
+        "adversarial": 60,
+        "llm_generated": 113,
+        "perturbation": 414,
+        "real_world": 46,
+        "scraped": 486
+      },
+      "generation_method_hallucinated": {
+        "adversarial": 60,
+        "llm_generated": 99,
+        "perturbation": 410,
+        "real_world": 46
+      },
+      "generation_method_valid": {
+        "llm_generated": 14,
+        "perturbation": 4,
+        "scraped": 486
+      },
+      "source_distribution": {
+        "None": 509,
+        "dblp": 36,
+        "gptzero_neurips2025": 38,
+        "llm_generated": 108,
+        "perturbation": 50,
+        "perturbation_scaleup": 370,
+        "real_world": 8
+      },
+      "publication_date_months": {
+        "": 5,
+        "2021-01": 335,
+        "2022-01": 367,
+        "2023-01": 313,
+        "2026-02": 99
+      },
+      "bibtex_types": {
+        "article": 65,
+        "inproceedings": 1054
+      },
+      "field_completeness": {
+        "HALLUCINATED": {
+          "author": 1.0,
+          "booktitle": 0.8862,
+          "doi": 0.5236,
+          "journal": 0.0146,
+          "title": 1.0,
+          "url": 0.0163,
+          "year": 1.0
+        },
+        "ALL": {
+          "author": 1.0,
+          "booktitle": 0.9178,
+          "doi": 0.4951,
+          "journal": 0.008,
+          "title": 1.0,
+          "url": 0.0617,
+          "year": 1.0
+        },
+        "VALID": {
+          "author": 1.0,
+          "booktitle": 0.9563,
+          "doi": 0.4603,
+          "title": 1.0,
+          "url": 0.1171,
+          "year": 1.0
+        }
+      },
+      "subtests": {
+        "entries_with_subtests": 1119,
+        "coverage": 1.0,
+        "values": {
+          "doi_resolves": {
+            "None": 567,
+            "False": 48,
+            "True": 504
+          },
+          "title_exists": {
+            "False": 207,
+            "True": 912
+          },
+          "authors_match": {
+            "False": 281,
+            "True": 838
+          },
+          "venue_correct": {
+            "True": 921,
+            "False": 198
+          },
+          "fields_complete": {
+            "False": 53,
+            "True": 1066
+          },
+          "cross_db_agreement": {
+            "False": 633,
+            "True": 486
+          }
+        }
+      },
+      "subtests_by_type": {
+        "plausible_fabrication": {
+          "doi_resolves": {
+            "None": 70,
+            "False": 8
+          },
+          "title_exists": {
+            "False": 78
+          },
+          "authors_match": {
+            "False": 78
+          },
+          "venue_correct": {
+            "True": 77,
+            "False": 1
+          },
+          "fields_complete": {
+            "False": 15,
+            "True": 63
+          },
+          "cross_db_agreement": {
+            "False": 78
+          }
+        },
+        "near_miss_title": {
+          "doi_resolves": {
+            "True": 28,
+            "None": 24
+          },
+          "title_exists": {
+            "False": 52
+          },
+          "authors_match": {
+            "True": 52
+          },
+          "venue_correct": {
+            "True": 52
+          },
+          "fields_complete": {
+            "True": 48,
+            "False": 4
+          },
+          "cross_db_agreement": {
+            "False": 52
+          }
+        },
+        "merged_citation": {
+          "doi_resolves": {
+            "None": 15,
+            "True": 15
+          },
+          "title_exists": {
+            "True": 30
+          },
+          "authors_match": {
+            "False": 30
+          },
+          "venue_correct": {
+            "False": 30
+          },
+          "fields_complete": {
+            "True": 30
+          },
+          "cross_db_agreement": {
+            "False": 30
+          }
+        },
+        "arxiv_version_mismatch": {
+          "doi_resolves": {
+            "None": 19,
+            "True": 30
+          },
+          "title_exists": {
+            "True": 49
+          },
+          "authors_match": {
+            "True": 49
+          },
+          "venue_correct": {
+            "False": 49
+          },
+          "fields_complete": {
+            "True": 49
+          },
+          "cross_db_agreement": {
+            "False": 49
+          }
+        },
+        "chimeric_title": {
+          "doi_resolves": {
+            "True": 28,
+            "None": 19
+          },
+          "title_exists": {
+            "False": 47
+          },
+          "authors_match": {
+            "True": 47
+          },
+          "venue_correct": {
+            "True": 47
+          },
+          "fields_complete": {
+            "True": 45,
+            "False": 2
+          },
+          "cross_db_agreement": {
+            "False": 47
+          }
+        },
+        "future_date": {
+          "doi_resolves": {
+            "None": 22,
+            "True": 8
+          },
+          "title_exists": {
+            "True": 30
+          },
+          "authors_match": {
+            "True": 30
+          },
+          "venue_correct": {
+            "True": 30
+          },
+          "fields_complete": {
+            "True": 29,
+            "False": 1
+          },
+          "cross_db_agreement": {
+            "False": 30
+          }
+        },
+        "wrong_venue": {
+          "doi_resolves": {
+            "True": 29,
+            "None": 19
+          },
+          "title_exists": {
+            "True": 48
+          },
+          "authors_match": {
+            "True": 48
+          },
+          "venue_correct": {
+            "False": 48
+          },
+          "fields_complete": {
+            "True": 48
+          },
+          "cross_db_agreement": {
+            "False": 48
+          }
+        },
+        "partial_author_list": {
+          "doi_resolves": {
+            "None": 21,
+            "True": 11
+          },
+          "title_exists": {
+            "True": 32
+          },
+          "authors_match": {
+            "False": 32
+          },
+          "venue_correct": {
+            "True": 32
+          },
+          "fields_complete": {
+            "True": 32
+          },
+          "cross_db_agreement": {
+            "False": 32
+          }
+        },
+        "swapped_authors": {
+          "doi_resolves": {
+            "True": 50,
+            "None": 18,
+            "False": 2
+          },
+          "title_exists": {
+            "True": 70
+          },
+          "authors_match": {
+            "False": 70
+          },
+          "venue_correct": {
+            "True": 70
+          },
+          "fields_complete": {
+            "True": 70
+          },
+          "cross_db_agreement": {
+            "False": 70
+          }
+        },
+        "placeholder_authors": {
+          "doi_resolves": {
+            "None": 19,
+            "True": 22
+          },
+          "title_exists": {
+            "True": 41
+          },
+          "authors_match": {
+            "False": 41
+          },
+          "venue_correct": {
+            "True": 41
+          },
+          "fields_complete": {
+            "True": 41
+          },
+          "cross_db_agreement": {
+            "False": 41
+          }
+        },
+        "preprint_as_published": {
+          "doi_resolves": {
+            "None": 17,
+            "True": 14
+          },
+          "title_exists": {
+            "True": 31
+          },
+          "authors_match": {
+            "True": 31
+          },
+          "venue_correct": {
+            "False": 31
+          },
+          "fields_complete": {
+            "True": 31
+          },
+          "cross_db_agreement": {
+            "False": 31
+          }
+        },
+        "fabricated_doi": {
+          "doi_resolves": {
+            "False": 38
+          },
+          "title_exists": {
+            "True": 38
+          },
+          "authors_match": {
+            "True": 38
+          },
+          "venue_correct": {
+            "True": 38
+          },
+          "fields_complete": {
+            "True": 33,
+            "False": 5
+          },
+          "cross_db_agreement": {
+            "False": 38
+          }
+        },
+        "hybrid_fabrication": {
+          "doi_resolves": {
+            "True": 16,
+            "None": 14
+          },
+          "title_exists": {
+            "False": 30
+          },
+          "authors_match": {
+            "False": 30
+          },
+          "venue_correct": {
+            "True": 30
+          },
+          "fields_complete": {
+            "True": 26,
+            "False": 4
+          },
+          "cross_db_agreement": {
+            "False": 30
+          }
+        },
+        "nonexistent_venue": {
+          "doi_resolves": {
+            "None": 18,
+            "True": 21
+          },
+          "title_exists": {
+            "True": 39
+          },
+          "authors_match": {
+            "True": 39
+          },
+          "venue_correct": {
+            "False": 39
+          },
+          "fields_complete": {
+            "True": 39
+          },
+          "cross_db_agreement": {
+            "False": 39
+          }
+        }
+      },
+      "has_raw_bibtex": 0,
+      "integrity": {
+        "hallucinated_missing_type": 0,
+        "hallucinated_missing_tier": 0,
+        "valid_with_type": 0,
+        "empty_title": 0,
+        "empty_author": 0,
+        "has_doi": 554,
+        "future_dated": 30
+      }
+    },
+    "test_public": {
+      "split": "test_public",
+      "file": "data\\v1.2\\test_public.jsonl",
+      "sha256": "22273a94a897c876b39ec3dc0f34ea656eda45270b6d8725da02f30c6724064c",
+      "size_bytes": 768398,
+      "n_entries": 831,
+      "n_valid": 307,
+      "n_hallucinated": 524,
+      "label_values": {
+        "HALLUCINATED": 524,
+        "VALID": 307
+      },
+      "tier_distribution": {
+        "1": 128,
+        "2": 243,
+        "3": 153
+      },
+      "type_distribution": {
+        "arxiv_version_mismatch": 45,
+        "chimeric_title": 23,
+        "fabricated_doi": 29,
+        "future_date": 29,
+        "hybrid_fabrication": 32,
+        "merged_citation": 29,
+        "near_miss_title": 40,
+        "nonexistent_venue": 37,
+        "partial_author_list": 31,
+        "placeholder_authors": 33,
+        "plausible_fabrication": 68,
+        "preprint_as_published": 30,
+        "swapped_authors": 63,
+        "wrong_venue": 35
+      },
+      "generation_method_distribution": {
+        "adversarial": 59,
+        "llm_generated": 90,
+        "perturbation": 361,
+        "real_world": 34,
+        "scraped": 287
+      },
+      "generation_method_hallucinated": {
+        "adversarial": 59,
+        "llm_generated": 70,
+        "perturbation": 361,
+        "real_world": 34
+      },
+      "generation_method_valid": {
+        "llm_generated": 20,
+        "scraped": 287
+      },
+      "source_distribution": {
+        "None": 296,
+        "dblp": 24,
+        "gptzero_neurips2025": 31,
+        "llm_generated": 85,
+        "perturbation": 21,
+        "perturbation_scaleup": 371,
+        "real_world": 3
+      },
+      "publication_date_months": {
+        "": 5,
+        "2021-01": 264,
+        "2022-01": 260,
+        "2023-01": 243,
+        "2026-02": 59
+      },
+      "bibtex_types": {
+        "article": 37,
+        "inproceedings": 794
+      },
+      "field_completeness": {
+        "HALLUCINATED": {
+          "author": 1.0,
+          "booktitle": 0.9179,
+          "doi": 0.4771,
+          "journal": 0.0153,
+          "title": 1.0,
+          "url": 0.0134,
+          "year": 1.0
+        },
+        "ALL": {
+          "author": 1.0,
+          "booktitle": 0.9326,
+          "doi": 0.4621,
+          "journal": 0.0096,
+          "title": 1.0,
+          "url": 0.0542,
+          "year": 1.0
+        },
+        "VALID": {
+          "author": 1.0,
+          "booktitle": 0.9577,
+          "doi": 0.4365,
+          "title": 1.0,
+          "url": 0.1238,
+          "year": 1.0
+        }
+      },
+      "subtests": {
+        "entries_with_subtests": 831,
+        "coverage": 1.0,
+        "values": {
+          "doi_resolves": {
+            "None": 450,
+            "True": 343,
+            "False": 38
+          },
+          "title_exists": {
+            "True": 668,
+            "False": 163
+          },
+          "authors_match": {
+            "True": 575,
+            "False": 256
+          },
+          "venue_correct": {
+            "True": 655,
+            "False": 176
+          },
+          "fields_complete": {
+            "True": 795,
+            "False": 36
+          },
+          "cross_db_agreement": {
+            "False": 542,
+            "True": 289
+          }
+        }
+      },
+      "subtests_by_type": {
+        "future_date": {
+          "doi_resolves": {
+            "None": 18,
+            "True": 11
+          },
+          "title_exists": {
+            "True": 29
+          },
+          "authors_match": {
+            "True": 29
+          },
+          "venue_correct": {
+            "True": 29
+          },
+          "fields_complete": {
+            "True": 28,
+            "False": 1
+          },
+          "cross_db_agreement": {
+            "False": 29
+          }
+        },
+        "partial_author_list": {
+          "doi_resolves": {
+            "True": 12,
+            "None": 19
+          },
+          "title_exists": {
+            "True": 31
+          },
+          "authors_match": {
+            "False": 31
+          },
+          "venue_correct": {
+            "True": 31
+          },
+          "fields_complete": {
+            "True": 30,
+            "False": 1
+          },
+          "cross_db_agreement": {
+            "False": 31
+          }
+        },
+        "chimeric_title": {
+          "doi_resolves": {
+            "False": 1,
+            "None": 11,
+            "True": 11
+          },
+          "title_exists": {
+            "False": 23
+          },
+          "authors_match": {
+            "True": 23
+          },
+          "venue_correct": {
+            "True": 23
+          },
+          "fields_complete": {
+            "True": 20,
+            "False": 3
+          },
+          "cross_db_agreement": {
+            "False": 23
+          }
+        },
+        "preprint_as_published": {
+          "doi_resolves": {
+            "True": 11,
+            "None": 19
+          },
+          "title_exists": {
+            "True": 30
+          },
+          "authors_match": {
+            "True": 30
+          },
+          "venue_correct": {
+            "False": 30
+          },
+          "fields_complete": {
+            "True": 30
+          },
+          "cross_db_agreement": {
+            "False": 30
+          }
+        },
+        "placeholder_authors": {
+          "doi_resolves": {
+            "None": 16,
+            "True": 17
+          },
+          "title_exists": {
+            "True": 33
+          },
+          "authors_match": {
+            "False": 33
+          },
+          "venue_correct": {
+            "True": 33
+          },
+          "fields_complete": {
+            "True": 32,
+            "False": 1
+          },
+          "cross_db_agreement": {
+            "False": 33
+          }
+        },
+        "fabricated_doi": {
+          "doi_resolves": {
+            "False": 29
+          },
+          "title_exists": {
+            "True": 29
+          },
+          "authors_match": {
+            "True": 29
+          },
+          "venue_correct": {
+            "True": 29
+          },
+          "fields_complete": {
+            "True": 28,
+            "False": 1
+          },
+          "cross_db_agreement": {
+            "False": 29
+          }
+        },
+        "swapped_authors": {
+          "doi_resolves": {
+            "None": 21,
+            "True": 41,
+            "False": 1
+          },
+          "title_exists": {
+            "True": 63
+          },
+          "authors_match": {
+            "False": 63
+          },
+          "venue_correct": {
+            "True": 63
+          },
+          "fields_complete": {
+            "True": 62,
+            "False": 1
+          },
+          "cross_db_agreement": {
+            "False": 63
+          }
+        },
+        "plausible_fabrication": {
+          "doi_resolves": {
+            "None": 61,
+            "False": 7
+          },
+          "title_exists": {
+            "False": 68
+          },
+          "authors_match": {
+            "False": 68
+          },
+          "venue_correct": {
+            "True": 68
+          },
+          "fields_complete": {
+            "True": 58,
+            "False": 10
+          },
+          "cross_db_agreement": {
+            "False": 68
+          }
+        },
+        "arxiv_version_mismatch": {
+          "doi_resolves": {
+            "None": 24,
+            "True": 21
+          },
+          "title_exists": {
+            "True": 45
+          },
+          "authors_match": {
+            "True": 45
+          },
+          "venue_correct": {
+            "False": 45
+          },
+          "fields_complete": {
+            "True": 45
+          },
+          "cross_db_agreement": {
+            "False": 45
+          }
+        },
+        "merged_citation": {
+          "doi_resolves": {
+            "None": 14,
+            "True": 15
+          },
+          "title_exists": {
+            "True": 29
+          },
+          "authors_match": {
+            "False": 29
+          },
+          "venue_correct": {
+            "False": 29
+          },
+          "fields_complete": {
+            "True": 29
+          },
+          "cross_db_agreement": {
+            "False": 29
+          }
+        },
+        "nonexistent_venue": {
+          "doi_resolves": {
+            "True": 21,
+            "None": 16
+          },
+          "title_exists": {
+            "True": 37
+          },
+          "authors_match": {
+            "True": 37
+          },
+          "venue_correct": {
+            "False": 37
+          },
+          "fields_complete": {
+            "True": 37
+          },
+          "cross_db_agreement": {
+            "False": 37
+          }
+        },
+        "wrong_venue": {
+          "doi_resolves": {
+            "True": 15,
+            "None": 20
+          },
+          "title_exists": {
+            "True": 35
+          },
+          "authors_match": {
+            "True": 35
+          },
+          "venue_correct": {
+            "False": 35
+          },
+          "fields_complete": {
+            "True": 35
+          },
+          "cross_db_agreement": {
+            "False": 35
+          }
+        },
+        "near_miss_title": {
+          "doi_resolves": {
+            "True": 20,
+            "None": 20
+          },
+          "title_exists": {
+            "False": 40
+          },
+          "authors_match": {
+            "True": 40
+          },
+          "venue_correct": {
+            "True": 40
+          },
+          "fields_complete": {
+            "True": 38,
+            "False": 2
+          },
+          "cross_db_agreement": {
+            "False": 40
+          }
+        },
+        "hybrid_fabrication": {
+          "doi_resolves": {
+            "True": 15,
+            "None": 17
+          },
+          "title_exists": {
+            "False": 32
+          },
+          "authors_match": {
+            "False": 32
+          },
+          "venue_correct": {
+            "True": 32
+          },
+          "fields_complete": {
+            "True": 29,
+            "False": 3
+          },
+          "cross_db_agreement": {
+            "False": 32
+          }
+        }
+      },
+      "has_raw_bibtex": 0,
+      "integrity": {
+        "hallucinated_missing_type": 0,
+        "hallucinated_missing_tier": 0,
+        "valid_with_type": 0,
+        "empty_title": 0,
+        "empty_author": 0,
+        "has_doi": 384,
+        "future_dated": 29
+      }
+    },
+    "stress_test": {
+      "split": "stress_test",
+      "file": "data\\v1.2\\stress_test.jsonl",
+      "sha256": "315dceac9cd4e4f5160fafc978d7a0fad74763e3dbec0e87287ef12055b4e2ec",
+      "size_bytes": 101183,
+      "n_entries": 121,
+      "n_valid": 0,
+      "n_hallucinated": 121,
+      "label_values": {
+        "HALLUCINATED": 121
+      },
+      "tier_distribution": {
+        "2": 85,
+        "3": 36
+      },
+      "type_distribution": {
+        "arxiv_version_mismatch": 36,
+        "merged_citation": 46,
+        "partial_author_list": 39
+      },
+      "generation_method_distribution": {
+        "perturbation": 121
+      },
+      "generation_method_hallucinated": {
+        "perturbation": 121
+      },
+      "generation_method_valid": {},
+      "source_distribution": {
+        "perturbation": 119,
+        "perturbation_scaleup": 2
+      },
+      "publication_date_months": {
+        "2021-01": 35,
+        "2022-01": 39,
+        "2023-01": 47
+      },
+      "bibtex_types": {
+        "inproceedings": 121
+      },
+      "field_completeness": {
+        "HALLUCINATED": {
+          "author": 1.0,
+          "booktitle": 1.0,
+          "doi": 0.6694,
+          "title": 1.0,
+          "year": 1.0
+        },
+        "ALL": {
+          "author": 1.0,
+          "booktitle": 1.0,
+          "doi": 0.6694,
+          "title": 1.0,
+          "year": 1.0
+        }
+      },
+      "subtests": {
+        "entries_with_subtests": 121,
+        "coverage": 1.0,
+        "values": {
+          "doi_resolves": {
+            "None": 40,
+            "True": 81
+          },
+          "title_exists": {
+            "True": 121
+          },
+          "authors_match": {
+            "True": 36,
+            "False": 85
+          },
+          "venue_correct": {
+            "False": 82,
+            "True": 39
+          },
+          "fields_complete": {
+            "True": 121
+          },
+          "cross_db_agreement": {
+            "False": 121
+          }
+        }
+      },
+      "subtests_by_type": {
+        "arxiv_version_mismatch": {
+          "doi_resolves": {
+            "None": 10,
+            "True": 26
+          },
+          "title_exists": {
+            "True": 36
+          },
+          "authors_match": {
+            "True": 36
+          },
+          "venue_correct": {
+            "False": 36
+          },
+          "fields_complete": {
+            "True": 36
+          },
+          "cross_db_agreement": {
+            "False": 36
+          }
+        },
+        "merged_citation": {
+          "doi_resolves": {
+            "True": 29,
+            "None": 17
+          },
+          "title_exists": {
+            "True": 46
+          },
+          "authors_match": {
+            "False": 46
+          },
+          "venue_correct": {
+            "False": 46
+          },
+          "fields_complete": {
+            "True": 46
+          },
+          "cross_db_agreement": {
+            "False": 46
+          }
+        },
+        "partial_author_list": {
+          "doi_resolves": {
+            "True": 26,
+            "None": 13
+          },
+          "title_exists": {
+            "True": 39
+          },
+          "authors_match": {
+            "False": 39
+          },
+          "venue_correct": {
+            "True": 39
+          },
+          "fields_complete": {
+            "True": 39
+          },
+          "cross_db_agreement": {
+            "False": 39
+          }
+        }
+      },
+      "has_raw_bibtex": 0,
+      "integrity": {
+        "hallucinated_missing_type": 0,
+        "hallucinated_missing_tier": 0,
+        "valid_with_type": 0,
+        "empty_title": 0,
+        "empty_author": 0,
+        "has_doi": 81,
+        "future_dated": 0
+      }
+    }
+  },
+  "cross_split_overlap": {
+    "dev_public|stress_test": {
+      "shared_bibtex_keys": 0,
+      "examples_keys": [],
+      "shared_normalized_titles": 4,
+      "examples_titles": [
+        "a unified analysis of federated learning with arbitrary client participation",
+        "dual parameterization of sparse variational gaussian processes",
+        "online pca in converging self-consistent field equations",
+        "role of optimizer on network fine-tuning for adversarial robustness (student abstract)"
+      ]
+    },
+    "dev_public|test_public": {
+      "shared_bibtex_keys": 0,
+      "examples_keys": [],
+      "shared_normalized_titles": 0,
+      "examples_titles": []
+    },
+    "stress_test|test_public": {
+      "shared_bibtex_keys": 0,
+      "examples_keys": [],
+      "shared_normalized_titles": 55,
+      "examples_titles": [
+        "a brand new dance partner: music-conditioned pluralistic dancing controlled by multiple dance genres",
+        "a first mathematical runtime analysis of the non-dominated sorting genetic algorithm ii (nsga-ii)",
+        "a general theory of correct, incorrect, and extrinsic equivariance",
+        "a statistical perspective on retrieval-based models",
+        "adaptive consistency prior based deep network for image denoising"
+      ]
+    }
+  },
+  "leak_risk_fields_present_in_benchmark_file": [
+    "label",
+    "hallucination_type",
+    "difficulty_tier",
+    "explanation",
+    "generation_method",
+    "source",
+    "source_conference",
+    "subtests",
+    "raw_bibtex"
+  ]
+}

@@ -1,0 +1,4 @@
+split	n_entries	n_valid	n_hallucinated	hallucination_rate
+dev_public	1119	504	615	0.5496
+test_public	831	307	524	0.6306
+stress_test	121	0	121	1.0000

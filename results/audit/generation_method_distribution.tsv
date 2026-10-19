@@ -1,0 +1,6 @@
+generation_method	dev_public	test_public	stress_test
+adversarial	60	59	0
+llm_generated	113	90	0
+perturbation	414	361	121
+real_world	46	34	0
+scraped	486	287	0

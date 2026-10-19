@@ -1,0 +1,91 @@
+[15:29:20] E1: 11 baselines x 2 splits
+[15:29:20] skip always_hallucinated on dev_public (already scored)
+[15:29:20] skip always_hallucinated on test_public (already scored)
+[15:29:20] skip always_valid on dev_public (already scored)
+[15:29:20] skip always_valid on test_public (already scored)
+[15:29:20] skip random on dev_public (already scored)
+[15:29:20] skip random on test_public (already scored)
+[15:29:20] skip doi_presence_heuristic on dev_public (already scored)
+[15:29:20] skip doi_presence_heuristic on test_public (already scored)
+[15:29:20] skip doi_only_no_prescreening on dev_public (already scored)
+[15:29:20] skip doi_only_no_prescreening on test_public (already scored)
+[15:29:20] skip doi_only on dev_public (already scored)
+[15:29:20] skip doi_only on test_public (already scored)
+[15:29:20] running hallucitechecker on dev_public (1119 entries, 5 workers) ...
+[15:29:20] hallucitechecker: 1119/1119 entries to run (0 resumed from checkpoint)
+[15:29:41]   entry bb81ad4f08e0 failed after 4 attempts: AttributeError: 'BlindEntry' object has no attribute 'to_blind'
+[15:29:41]   entry ce034d80f2ee failed after 4 attempts: AttributeError: 'BlindEntry' object has no attribute 'to_blind'
+[15:29:41]   entry caef38397355 failed after 4 attempts: AttributeError: 'BlindEntry' object has no attribute 'to_blind'
+[15:29:41]   entry d5eef6dc978e failed after 4 attempts: AttributeError: 'BlindEntry' object has no attribute 'to_blind'
+[15:29:41]   entry a1a52be81664 failed after 4 attempts: AttributeError: 'BlindEntry' object has no attribute 'to_blind'
+[15:30:02]   entry a8c1698a41e3 failed after 4 attempts: AttributeError: 'BlindEntry' object has no attribute 'to_blind'
+[15:30:02]   entry bcc32862d754 failed after 4 attempts: AttributeError: 'BlindEntry' object has no attribute 'to_blind'
+[15:30:02]   entry ee938d491c06 failed after 4 attempts: AttributeError: 'BlindEntry' object has no attribute 'to_blind'
+[15:30:02]   entry b5dc91d7f6e8 failed after 4 attempts: AttributeError: 'BlindEntry' object has no attribute 'to_blind'
+[15:30:02]   entry d4c1aacd87ff failed after 4 attempts: AttributeError: 'BlindEntry' object has no attribute 'to_blind'
+[15:30:23]   entry d75c6bc0d6b6 failed after 4 attempts: AttributeError: 'BlindEntry' object has no attribute 'to_blind'
+[15:30:23]   entry af1141b42cd7 failed after 4 attempts: AttributeError: 'BlindEntry' object has no attribute 'to_blind'
+[15:30:23]   entry cd588085bf52 failed after 4 attempts: AttributeError: 'BlindEntry' object has no attribute 'to_blind'
+[15:30:23]   entry b76f5bcce451 failed after 4 attempts: AttributeError: 'BlindEntry' object has no attribute 'to_blind'
+[15:30:23]   entry c874720f3e08 failed after 4 attempts: AttributeError: 'BlindEntry' object has no attribute 'to_blind'
+[15:30:44]   entry c033c566368d failed after 4 attempts: AttributeError: 'BlindEntry' object has no attribute 'to_blind'
+[15:30:44]   entry f3a41154008c failed after 4 attempts: AttributeError: 'BlindEntry' object has no attribute 'to_blind'
+[15:30:44]   entry b46c2cf3acfd failed after 4 attempts: AttributeError: 'BlindEntry' object has no attribute 'to_blind'
+[15:30:44]   entry b67497cbd9ea failed after 4 attempts: AttributeError: 'BlindEntry' object has no attribute 'to_blind'
+[15:30:44]   entry f039636e827e failed after 4 attempts: AttributeError: 'BlindEntry' object has no attribute 'to_blind'
+[15:31:05]   entry e8ee8e313f25 failed after 4 attempts: AttributeError: 'BlindEntry' object has no attribute 'to_blind'
+[15:31:05]   entry e2a2db556f3a failed after 4 attempts: AttributeError: 'BlindEntry' object has no attribute 'to_blind'
+[15:31:05]   entry eeac2e647852 failed after 4 attempts: AttributeError: 'BlindEntry' object has no attribute 'to_blind'
+[15:31:05]   entry abab80f50b05 failed after 4 attempts: AttributeError: 'BlindEntry' object has no attribute 'to_blind'
+[15:31:05]   entry bcf4882d14ea failed after 4 attempts: AttributeError: 'BlindEntry' object has no attribute 'to_blind'
+[15:31:26]   entry b3df54dd03dc failed after 4 attempts: AttributeError: 'BlindEntry' object has no attribute 'to_blind'
+[15:31:26]   entry bec666866ff3 failed after 4 attempts: AttributeError: 'BlindEntry' object has no attribute 'to_blind'
+[15:31:26]   entry f07e3f755575 failed after 4 attempts: AttributeError: 'BlindEntry' object has no attribute 'to_blind'
+[15:31:26]   entry cc8348800b0a failed after 4 attempts: AttributeError: 'BlindEntry' object has no attribute 'to_blind'
+[15:31:26]   entry da9f3dcc242e failed after 4 attempts: AttributeError: 'BlindEntry' object has no attribute 'to_blind'
+[15:31:47]   entry fa23a80d13ab failed after 4 attempts: AttributeError: 'BlindEntry' object has no attribute 'to_blind'
+[15:31:47]   entry dcbb641d5adc failed after 4 attempts: AttributeError: 'BlindEntry' object has no attribute 'to_blind'
+[15:31:47]   entry e2f86a25f121 failed after 4 attempts: AttributeError: 'BlindEntry' object has no attribute 'to_blind'
+[15:31:47]   entry cc195b167eb4 failed after 4 attempts: AttributeError: 'BlindEntry' object has no attribute 'to_blind'
+[15:31:47]   entry a93bfbef2351 failed after 4 attempts: AttributeError: 'BlindEntry' object has no attribute 'to_blind'
+[15:32:08]   entry d0e8fbff7001 failed after 4 attempts: AttributeError: 'BlindEntry' object has no attribute 'to_blind'
+[15:32:08]   entry e7b6ba2f1fad failed after 4 attempts: AttributeError: 'BlindEntry' object has no attribute 'to_blind'[15:32:08]   entry a4f41baa713a failed after 4 attempts: AttributeError: 'BlindEntry' object has no attribute 'to_blind'
+[15:32:08]   entry fd06c94af46d failed after 4 attempts: AttributeError: 'BlindEntry' object has no attribute 'to_blind'
+
+[15:32:08]   entry c0812fb1e50a failed after 4 attempts: AttributeError: 'BlindEntry' object has no attribute 'to_blind'
+[15:32:29]   entry db228049d7a9 failed after 4 attempts: AttributeError: 'BlindEntry' object has no attribute 'to_blind'
+[15:32:29]   entry bfa63f49d844 failed after 4 attempts: AttributeError: 'BlindEntry' object has no attribute 'to_blind'
+[15:32:29]   entry d9502ea52395 failed after 4 attempts: AttributeError: 'BlindEntry' object has no attribute 'to_blind'
+[15:32:29]   entry f59db5e0b438 failed after 4 attempts: AttributeError: 'BlindEntry' object has no attribute 'to_blind'
+[15:32:29]   entry c25b080c90c2 failed after 4 attempts: AttributeError: 'BlindEntry' object has no attribute 'to_blind'
+[15:32:50]   entry b1d1ae075e3d failed after 4 attempts: AttributeError: 'BlindEntry' object has no attribute 'to_blind'
+[15:32:50]   entry ec2541ce13c5 failed after 4 attempts: AttributeError: 'BlindEntry' object has no attribute 'to_blind'
+[15:32:50]   entry b9474b009964 failed after 4 attempts: AttributeError: 'BlindEntry' object has no attribute 'to_blind'
+[15:32:50]   entry f09f32a30768 failed after 4 attempts: AttributeError: 'BlindEntry' object has no attribute 'to_blind'
+[15:32:50]   entry b6dfd7844352 failed after 4 attempts: AttributeError: 'BlindEntry' object has no attribute 'to_blind'
+[15:32:50]   hallucitechecker: 50/1119 (0.2 entries/s, ETA 4491s)
+[15:33:11]   entry c27d9920107a failed after 4 attempts: AttributeError: 'BlindEntry' object has no attribute 'to_blind'
+[15:33:11]   entry b0135c300a2a failed after 4 attempts: AttributeError: 'BlindEntry' object has no attribute 'to_blind'
+[15:33:11]   entry a39d3e201cdd failed after 4 attempts: AttributeError: 'BlindEntry' object has no attribute 'to_blind'
+[15:33:11]   entry a1de81b91af8 failed after 4 attempts: AttributeError: 'BlindEntry' object has no attribute 'to_blind'
+[15:33:11]   entry c0f088bed10c failed after 4 attempts: AttributeError: 'BlindEntry' object has no attribute 'to_blind'
+[15:33:32]   entry b4e44924b092 failed after 4 attempts: AttributeError: 'BlindEntry' object has no attribute 'to_blind'[15:33:32]   entry d0f7f9c72c33 failed after 4 attempts: AttributeError: 'BlindEntry' object has no attribute 'to_blind'
+[15:33:32]   entry ccd8e095d429 failed after 4 attempts: AttributeError: 'BlindEntry' object has no attribute 'to_blind'
+[15:33:32]   entry d3670c20564a failed after 4 attempts: AttributeError: 'BlindEntry' object has no attribute 'to_blind'
+
+[15:33:32]   entry eb77a5fd3d6f failed after 4 attempts: AttributeError: 'BlindEntry' object has no attribute 'to_blind'
+[15:33:53]   entry b9e0c641d08e failed after 4 attempts: AttributeError: 'BlindEntry' object has no attribute 'to_blind'
+[15:33:53]   entry e00a665213b1 failed after 4 attempts: AttributeError: 'BlindEntry' object has no attribute 'to_blind'
+[15:33:53]   entry b6c663d116ef failed after 4 attempts: AttributeError: 'BlindEntry' object has no attribute 'to_blind'
+[15:33:53]   entry a8fc7e02004e failed after 4 attempts: AttributeError: 'BlindEntry' object has no attribute 'to_blind'
+[15:33:53]   entry bd475df78b66 failed after 4 attempts: AttributeError: 'BlindEntry' object has no attribute 'to_blind'
+[15:34:14]   entry b8774e6745b1 failed after 4 attempts: AttributeError: 'BlindEntry' object has no attribute 'to_blind'
+[15:34:14]   entry a045c005ca52 failed after 4 attempts: AttributeError: 'BlindEntry' object has no attribute 'to_blind'
+[15:34:14]   entry f8df3186e2e6 failed after 4 attempts: AttributeError: 'BlindEntry' object has no attribute 'to_blind'
+[15:34:14]   entry d1913fd91ab1 failed after 4 attempts: AttributeError: 'BlindEntry' object has no attribute 'to_blind'
+[15:34:14]   entry f58304cfea58 failed after 4 attempts: AttributeError: 'BlindEntry' object has no attribute 'to_blind'
+[15:34:35]   entry cbec45d91fed failed after 4 attempts: AttributeError: 'BlindEntry' object has no attribute 'to_blind'
+[15:34:35]   entry ceca8523cdca failed after 4 attempts: AttributeError: 'BlindEntry' object has no attribute 'to_blind'
+[15:34:35]   entry faa1ea092c70 failed after 4 attempts: AttributeError: 'BlindEntry' object has no attribute 'to_blind'
+[15:34:35]   entry f7d334a14f51 failed after 4 attempts: AttributeError: 'BlindEntry' object has no attribute 'to_blind'
+[15:34:35]   entry c82a849afe70 failed after 4 attempts: AttributeError: 'BlindEntry' object has no attribute 'to_blind'
